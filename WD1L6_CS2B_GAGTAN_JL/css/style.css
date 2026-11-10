@@ -1,0 +1,415 @@
+/* 
+   Profile - Jamilla Gagtan
+   External stylesheet
+*/
+
+/* ---------- Design (pink and purple palette) ---------- */
+:root {
+  --plum:   #4a1d6b;   /* deep purple: dark sections, headings */
+  --blush:  #ffe3f1;   /* light pink: soft backgrounds */
+  --pink:   #d6307f;   /* hot pink: main actions and name */
+  --lilac:  #d9b8ff;   /* light purple: highlights */
+  --violet: #7b3fc4;   /* mid purple: small accents */
+  --ink:    #2a1233;   /* dark purple-black for outlines and text */
+  --paper:  #fff7fb;   /* soft pink-white for cards */
+  --shadow: 6px 6px 0 var(--ink);  /* my signature hard shadow */
+}
+
+/* ---------- Base ---------- */
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Nunito", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.65;
+}
+h1, h2, h3 { 
+  font-family: "Fraunces", 
+  Georgia, serif; 
+  font-weight: 800; 
+}
+a { 
+  color: var(--pink); 
+}
+code { 
+  color: var(--plum); 
+  background: rgba(74, 29, 107, .08); 
+  padding: 0 .3em; 
+  border-radius: 4px; 
+}
+
+/* Visible keyboard focus everywhere */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--lilac);
+  outline-offset: 2px;
+}
+
+/* ---------- Navbar ---------- */
+.site-nav {
+  background: var(--paper);
+  border-bottom: 2px solid var(--ink);
+}
+.brand-mark {
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: #fff;
+  background: var(--pink);
+  width: 3.2rem; height: 3rem;
+  padding-bottom: .35rem;            /* nudge the letters up into the wider part of the heart */
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.site-nav .nav-link { 
+  color: var(--ink); 
+  font-weight: 700; 
+  border-radius: 999px; 
+  padding: .4rem .9rem; 
+}
+.site-nav .nav-link:hover { 
+  background: var(--blush); 
+}
+/* .active is added automatically by Bootstrap ScrollSpy */
+.site-nav .nav-link.active { 
+  background: var(--lilac); 
+  border: 0; 
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 100vh;
+  padding: 7rem 0 4rem;
+  background: var(--blush);
+  position: relative;
+  overflow: hidden;
+}
+.hero-hello { 
+  font-size: 1.4rem; 
+  font-weight: 700; 
+  margin-bottom: 0; 
+}
+.hero-name {
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--pink);
+  /* Layered shadow gives a "sticker" look */
+  text-shadow: 4px 4px 0 var(--lilac);
+  margin-bottom: .5rem;
+}
+.hero-role { 
+  font-size: 1.6rem; 
+  font-weight: 700; 
+  color: var(--plum); 
+  min-height: 2.4rem; 
+}
+.caret {
+  display: inline-block; width: 3px; height: 1.4rem;
+  background: var(--plum); margin-left: 4px; vertical-align: -3px;
+  animation: blink 1s steps(2) infinite;
+}
+@keyframes blink { 
+  50% { opacity: 0; } 
+}
+.hero-lead { 
+  max-width: 34rem; 
+  font-size: 1.15rem; 
+}
+
+/* Decorative hearts: an SVG heart is used as a mask, so any background color becomes a heart */
+.heart,
+.brand-mark {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 29.6'%3E%3Cpath d='M23.6 0c-3.4 0-6.3 2.7-7.6 5.6C14.7 2.7 11.8 0 8.4 0 3.8 0 0 3.8 0 8.4c0 9.4 9.5 11.9 16 21.2 6.1-9.3 16-12.1 16-21.2C32 3.8 28.2 0 23.6 0z'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 29.6'%3E%3Cpath d='M23.6 0c-3.4 0-6.3 2.7-7.6 5.6C14.7 2.7 11.8 0 8.4 0 3.8 0 0 3.8 0 8.4c0 9.4 9.5 11.9 16 21.2 6.1-9.3 16-12.1 16-21.2C32 3.8 28.2 0 23.6 0z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.heart { position: absolute; }
+.heart-lilac  { width: 190px; height: 190px; background: var(--lilac);  right: 24%; bottom: 10%; transform: rotate(-12deg); }
+.heart-violet { width: 110px; height: 110px; background: var(--violet); right: 11%; bottom: 36%; transform: rotate(14deg); }
+.heart-pink   { width: 400px; height: 400px; background: var(--pink);   right: -70px; bottom: -110px; transform: rotate(10deg); }
+
+/* ---------- Buttons (Bootstrap .btn + my own variants) ---------- */
+.btn-pop {
+  font-weight: 700;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  padding: .65rem 1.4rem;
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-pop:hover  { 
+  transform: translate(2px, 2px); 
+  box-shadow: 2px 2px 0 var(--ink); 
+}
+.btn-pop:active { 
+  transform: translate(4px, 4px); 
+  box-shadow: 0 0 0 var(--ink); 
+}
+.btn-pop-pink   { 
+  background: var(--pink);  
+  color: #fff; 
+}
+.btn-pop-pink:hover { 
+  background: var(--pink); 
+  color: #fff; 
+}
+.btn-pop-light { 
+  background: var(--paper);  
+  color: var(--ink); 
+}
+.btn-pop-light:hover { 
+  background: var(--paper); 
+  color: var(--ink); 
+}
+.btn-pop-dark  { 
+  background: var(--ink);   
+  color: var(--paper); 
+}
+.btn-pop-dark:hover { 
+  background: var(--ink); 
+  color: var(--paper); 
+}
+
+/* ---------- Shared section styles ---------- */
+.section { 
+  padding: 5.5rem 0; 
+}
+.section-blush { 
+  background: var(--blush); 
+  border-top: 2px solid var(--ink); 
+  border-bottom: 2px solid var(--ink); 
+}
+.section-plum { 
+  background: var(--plum); 
+  color: #fff; 
+  border-top: 2px solid var(--ink); 
+}
+.section-title { 
+  font-size: clamp(2rem, 5vw, 3rem); 
+  margin-bottom: 1rem; 
+}
+.section-intro { 
+  max-width: 42rem; 
+  font-size: 1.1rem; 
+  margin-bottom: 2rem; 
+}
+
+/* ---------- About: photo + motto ---------- */
+.portrait {
+  margin: 0;
+  border: 3px solid var(--ink);
+  border-radius: 200px 200px 24px 24px;  /* arch shape, like a shop window */
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--lilac);
+  aspect-ratio: 3 / 4;
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; }
+
+.motto {
+  border-left: 8px solid var(--lilac);
+  padding-left: 1.25rem;
+  margin: 1rem 0 1.5rem;
+}
+.motto p {
+  font-family: "Fraunces", serif;
+  font-weight: 800;
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  line-height: 1.2;
+  margin: 0;
+  color: var(--plum);
+}
+.about-text { 
+  max-width: 36rem; 
+  font-size: 1.1rem; 
+}
+.fact-list { 
+  padding: 0; 
+  margin: 1.5rem 0 0; 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: .6rem; 
+  list-style: none; 
+}
+.fact {
+  background: var(--paper); 
+  border: 2px solid var(--ink); 
+  border-radius: 999px;
+  padding: .25rem 1rem; 
+  font-weight: 700; 
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+/* ---------- Philosophy accordion ---------- */
+.pop-accordion .accordion-item {
+  border: 2px solid var(--ink);
+  border-radius: 16px !important;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  background: var(--paper);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.pop-accordion .accordion-button {
+  font-family: "Fraunces", serif; 
+  font-weight: 800; 
+  font-size: 1.3rem;
+  background: var(--paper); 
+  color: var(--ink); 
+  box-shadow: none;
+}
+.pop-accordion .accordion-button:not(.collapsed) { 
+  background: var(--lilac); 
+  color: var(--ink); 
+}
+.pop-accordion .accordion-body { 
+  font-size: 1.05rem; 
+}
+
+/* ---------- Projects ---------- */
+.project { 
+  margin-bottom: 5rem; 
+}
+.project:last-child {
+   margin-bottom: 0; 
+}
+.shot-frame {
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--ink);
+}
+.zoomable { 
+  cursor: zoom-in; 
+}
+.project-tag { 
+  font-weight: 700; 
+  color: var(--violet); 
+  margin-bottom: .25rem; 
+}
+.project-title { 
+  font-size: 2.2rem; 
+}
+.chips { 
+  list-style: none; 
+  padding: 0; 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: .5rem; 
+  margin: 1rem 0 1.5rem; 
+}
+.chips li {
+  background: var(--lilac); 
+  border: 2px solid var(--ink); 
+  border-radius: 999px;
+  padding: .1rem .8rem; 
+  font-size: .9rem; 
+  font-weight: 700;
+}
+
+/* ---------- Contact ---------- */
+.text-white-75 { 
+  color: rgba(255, 255, 255, .8); 
+  font-size: 1.1rem; 
+}
+.contact-list li { 
+  margin-bottom: .8rem; 
+  font-size: 1.1rem; 
+}
+.contact-list a { 
+  color: var(--lilac); 
+}
+.contact-label { 
+  display: inline-block; 
+  min-width: 5.5rem; 
+  font-weight: 700; 
+  color: var(--blush); 
+}
+.contact-card {
+  background: var(--paper); 
+  color: var(--ink);
+  border: 3px solid var(--ink); 
+  border-radius: 20px;
+  padding: 2rem; 
+  box-shadow: 8px 8px 0 var(--ink);
+}
+.contact-card .form-label { 
+  font-weight: 700; 
+}
+.contact-card .form-control { 
+  border: 2px solid var(--ink); 
+  border-radius: 12px; 
+}
+.counter { 
+  float: right; 
+  font-weight: 400; 
+  font-size: .85rem; 
+  color: #6b5a55; 
+}
+
+/* ---------- Footer ---------- */
+.site-footer { 
+  background: var(--ink); 
+  color: var(--paper); 
+  padding: 1.5rem 0; 
+}
+.site-footer a { 
+  color: var(--lilac); 
+}
+
+/* ---------- Image viewer modal ---------- */
+#imageModal .modal-content { 
+  background: transparent; 
+  border: 0; 
+  position: relative; 
+}
+#imageModal img { 
+  border: 3px solid var(--ink); 
+  border-radius: 12px; 
+}
+.modal-close { 
+  position: absolute; 
+  top: -.5rem; 
+  right: -.5rem; 
+  z-index: 5; 
+  background-color: var(--lilac); 
+  opacity: 1; 
+  padding: .7rem; 
+  border-radius: 50%; 
+  border: 2px solid var(--ink); 
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 767.98px) {
+  .hero { 
+    min-height: auto; 
+    padding-top: 6rem; 
+  }
+  .heart-pink { 
+    width: 240px; 
+    height: 240px; 
+    bottom: -70px; 
+  }
+  .heart-lilac { 
+    width: 110px; 
+    height: 110px; 
+    right: 30%; 
+  }
+  .heart-violet { 
+    display: none; 
+  }
+  .section { 
+    padding: 4rem 0; 
+  }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html { 
+    scroll-behavior: auto; 
+  }
+  .caret { 
+    animation: none; 
+  }
+  .btn-pop { 
+    transition: none; 
+  }
+}

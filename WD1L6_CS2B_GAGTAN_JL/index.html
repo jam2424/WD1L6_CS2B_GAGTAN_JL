@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jamilla Gagtan | Developer's Profile</title>
+
+  <!-- Google Fonts: Fraunces (headings) + Nunito (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;
+    9..144,800;9..144,900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS via jsDelivr CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
+
+  <!-- External stylesheet (loaded AFTER Bootstrap so it can override it) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav id="mainNav" class="navbar navbar-expand-md fixed-top site-nav">
+    <div class="container">
+      <a class="navbar-brand brand-mark" href="#hero">JG</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navLinks"
+              aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navLinks">
+        <ul class="navbar-nav ms-auto gap-md-1">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#philosophy">Philosophy</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ 1. HERO ============ -->
+  <header id="hero" class="hero d-flex align-items-center">
+    <!-- Decorative hearts (shaped in style.css with an SVG mask) -->
+    <span class="heart heart-lilac" aria-hidden="true"></span>
+    <span class="heart heart-violet" aria-hidden="true"></span>
+    <span class="heart heart-pink" aria-hidden="true"></span>
+
+    <div class="container position-relative">
+      <div class="row">
+        <div class="col-lg-9">
+          <p class="hero-hello">Hi, I'm</p>
+          <h1 class="hero-name">Jamilla Gagtan</h1>
+          <!-- JS (script.js) types and rotates these roles -->
+          <p class="hero-role">
+            <span id="typedRole" aria-live="polite">Web Developer</span>
+            <span class="caret" aria-hidden="true"></span>
+          </p>
+          <p class="hero-lead">I build small, friendly web pages with bold colors and clear 
+            layouts. This is where my work from Web Development 1 lives.</p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#projects" class="btn btn-pop btn-pop-pink">See my projects</a>
+            <a href="#contact" class="btn btn-pop btn-pop-light">Contact me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ 2. DEVELOPER PHOTO + MOTTO ============ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-md-5 col-lg-4">
+          <!-- Temporary profile photo: replace images/profile.jpg to change it -->
+          <figure class="portrait">
+            <img src="images/profile.jpg" alt="Portrait of Jamilla Gagtan wearing sunglasses, 
+              resting her chin on her hand" class="img-fluid">
+          </figure>
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <h2 class="section-title">About me</h2>
+          <!-- Motto: edit the text below -->
+          <blockquote class="motto">
+            <p>"Make it work, then make it cute."</p>
+          </blockquote>
+          <p class="about-text">I'm a Computer Science student (CS2B) learning 
+            to build websites from the ground up: HTML for structure, CSS for style, 
+            and JavaScript to make pages react to people.</p>
+          <ul class="list-inline fact-list">
+            <li class="fact">Computer Science 2B</li>
+            <li class="fact">Web Development 1</li>
+            <li class="fact">Ilocos, Philippines</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. DESIGN PHILOSOPHY ============ -->
+  <section id="philosophy" class="section section-blush">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <h2 class="section-title">My design philosophy</h2>
+          <p class="section-intro">I design like I'm making a sticker: flat shapes, 
+            strong outlines, and soft pink and purple tones that make a page feel friendly
+            before anyone reads a word. Looking at my three projects, three habits show up 
+            every time.</p>
+
+          <!-- Bootstrap accordion: each item opens to explain one principle -->
+          <div class="accordion pop-accordion" id="philosophyAccordion">
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#phil1" aria-expanded="true" aria-controls="phil1">
+                  Friendly first
+                </button>
+              </h3>
+              <div id="phil1" class="accordion-collapse collapse show" data-bs-parent="#philosophyAccordion">
+                <div class="accordion-body">
+                  Software can be useful and still be fun. My Sakatos Shop uses cartoon characters, 
+                  and GroceryKo uses a shop awning and rounded shapes. People relax around soft shapes 
+                  and warm color, so they stay longer and click with confidence.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#phil2" aria-expanded="false" aria-controls="phil2">
+                  Color with a job
+                </button>
+              </h3>
+              <div id="phil2" class="accordion-collapse collapse" data-bs-parent="#philosophyAccordion">
+                <div class="accordion-body">
+                  I pick a small palette and give each color a role. Hot pink marks the main action, 
+                  light purple marks small details, and deep purple anchors the page. When every color 
+                  means something, I don't need extra labels to explain the page.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#phil3" aria-expanded="false" aria-controls="phil3">
+                  Show what changed
+                </button>
+              </h3>
+              <div id="phil3" class="accordion-collapse collapse" data-bs-parent="#philosophyAccordion">
+                <div class="accordion-body">
+                  Good interfaces answer every click. The Show Grade Equivalent button reveals a new 
+                  table, and a checked grocery item updates the progress bar. I use JavaScript so the 
+                  page always shows the result of what the user just did.
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. PROJECTS PORTFOLIO ============ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title">Projects portfolio</h2>
+      <p class="section-intro">Three labs, each one a step up: first styling a page, then 
+        adding behavior, then building a small app that remembers its data.</p>
+
+      <!-- ---------- Project 1: Lab 3 ---------- -->
+      <article class="project row align-items-center g-4 g-lg-5">
+        <div class="col-lg-7">
+          <!-- Bootstrap carousel of screenshots; clicking a slide opens it larger (script.js) -->
+          <div id="carouselL3" class="carousel slide shot-frame" data-bs-ride="false">
+            <div class="carousel-inner">
+              <div class="carousel-item active"><img src="images/sakatos-hero.jpg" class="d-block w-100 zoomable" alt="Sakatos Shop home page with the hero section and four cartoon shoe characters"></div>
+              <div class="carousel-item"><img src="images/sakatos-guide.jpg" class="d-block w-100 zoomable" alt="Product highlights list and size guide table"></div>
+              <div class="carousel-item"><img src="images/sakatos-gallery.jpg" class="d-block w-100 zoomable" alt="Image gallery of three illustrated sneakers plus reasons and purchase links"></div>
+              <div class="carousel-item"><img src="images/sakatos-footer.jpg" class="d-block w-100 zoomable" alt="Footer with four cartoon fruit cards"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselL3" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselL3" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <p class="project-tag">Lab 3 &middot; Early project</p>
+          <h3 class="project-title">Sakatos Shop</h3>
+          <p>A product page for a shoe shop. I used it to practice the three ways of writing CSS: external stylesheet, internal <code>&lt;style&gt;</code> block, and inline styles. It also has a size guide table, a gallery, and a footer of product cards.</p>
+          <ul class="chips"><li>HTML</li><li>CSS</li><li>Responsive layout</li></ul>
+          <a class="btn btn-pop btn-pop-dark" href="https://github.com/jam2424/WD1L3_CS2B_GAGTAN_JL" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </article>
+
+      <!-- ---------- Project 2: Lab 4 ---------- -->
+      <article class="project row align-items-center g-4 g-lg-5 flex-lg-row-reverse">
+        <div class="col-lg-7">
+          <div id="carouselL4" class="carousel slide shot-frame" data-bs-ride="false">
+            <div class="carousel-inner">
+              <div class="carousel-item active"><img src="images/grades-table.jpg" class="d-block w-100 zoomable" alt="Table of five enrolled students and their grades with a Show Grade Equivalent button"></div>
+              <div class="carousel-item"><img src="images/grades-equivalent.jpg" class="d-block w-100 zoomable" alt="Second table showing grade equivalent, remark and academic leader for each student"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselL4" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselL4" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <p class="project-tag">Lab 4 &middot; Adding logic</p>
+          <h3 class="project-title">Student Grades</h3>
+          <p>My first project with JavaScript logic. It lists enrolled students and their grades. One button builds a second table that converts each grade to its equivalent, marks Passed or Failed, and awards Academic Leader titles.</p>
+          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>DOM manipulation</li></ul>
+          <a class="btn btn-pop btn-pop-dark" href="https://github.com/jam2424/WD1L4_CS2B_GAGTAN_J" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </article>
+
+      <!-- ---------- Project 3: Lab 5 ---------- -->
+      <article class="project row align-items-center g-4 g-lg-5">
+        <div class="col-lg-7">
+          <div id="carouselL5" class="carousel slide shot-frame" data-bs-ride="false">
+            <div class="carousel-inner">
+              <div class="carousel-item active"><img src="images/groceryko-login.jpg" class="d-block w-100 zoomable" alt="GroceryKo log in page with username and password fields"></div>
+              <div class="carousel-item"><img src="images/groceryko-register.jpg" class="d-block w-100 zoomable" alt="GroceryKo create your account form"></div>
+              <div class="carousel-item"><img src="images/groceryko-list.jpg" class="d-block w-100 zoomable" alt="GroceryKo shopping list with progress bar, add item form and filters"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselL5" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselL5" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <p class="project-tag">Lab 5 &middot; Latest project</p>
+          <h3 class="project-title">GroceryKo</h3>
+          <p>A shopping list app with sign up and log in pages. Once signed in, users add items with a quantity and category, tick them off as they shop, filter by To buy or Bought, and watch a progress bar fill. Everything is saved on the user's device.</p>
+          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Forms</li><li>Local storage</li></ul>
+          <a class="btn btn-pop btn-pop-dark" href="https://github.com/jam2424/WD1L5_CS2B_GAGTAN_JL" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 5. CONTACT ============ -->
+  <section id="contact" class="section section-plum">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <h2 class="section-title text-white">Contact me</h2>
+          <p class="text-white-75">Have a question about one of my projects, or want to say hi? Send a message or find me online.</p>
+          <ul class="list-unstyled contact-list">
+            <!-- TODO: replace with your real email and social links -->
+            <li><span class="contact-label">Email</span> <a href="mailto:jamillagagtan24@gmail.com">jamillagagtan24@gmail.com</a></li>
+            <li><span class="contact-label">GitHub</span> <a href="https://github.com/jam2424" target="_blank" rel="noopener">github.com/jam2424</a></li>
+            <li><span class="contact-label">Location</span> Ilocos, Philippines</li>
+          </ul>
+        </div>
+        <div class="col-lg-7">
+          <!-- novalidate: JavaScript (script.js) does the validation so I can show friendly messages -->
+          <form id="contactForm" class="contact-card" novalidate>
+            <div class="mb-3">
+              <label for="cName" class="form-label">Your name</label>
+              <input type="text" class="form-control" id="cName" required>
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="mb-3">
+              <label for="cEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="cEmail" required>
+              <div class="invalid-feedback">Please enter a valid email, like name@example.com.</div>
+            </div>
+            <div class="mb-3">
+              <label for="cMessage" class="form-label">Message <span class="counter" id="msgCounter">0 / 300</span></label>
+              <textarea class="form-control" id="cMessage" rows="4" maxlength="300" required></textarea>
+              <div class="invalid-feedback">Please write a message of at least 10 characters.</div>
+            </div>
+            <button type="submit" class="btn btn-pop btn-pop-pink">Send message</button>
+            <div id="formAlert" class="alert alert-success mt-3 d-none" role="status">Thanks! Your message is ready. (This demo page doesn't have a server, so nothing was actually sent.)</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-sm-row justify-content-between gap-2">
+      <span>&copy; <span id="year">2026</span> Jamilla Gagtan &middot; CS2B &middot; Web Development 1</span>
+      <a href="#hero">Back to top</a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap modal used as an image viewer (opened by script.js) -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-label="Screenshot viewer" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <img id="modalImage" src="" alt="" class="img-fluid">
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS bundle (includes Popper) via jsDelivr CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- My own external JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
